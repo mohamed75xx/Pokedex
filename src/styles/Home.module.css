@@ -1,0 +1,104 @@
+/* 
+  Styles principaux pour le conteneur des cartes Pokémon
+*/
+.cardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - 60px); /* Réserve un espace en bas pour la pagination */
+  padding-bottom: 60px;
+}
+
+/* 
+  Adaptation du conteneur pour les écrans plus petits
+*/
+@media (max-width: 768px) {
+  .cardContainer {
+    flex-direction: column;
+    padding-bottom: 60px;
+  }
+}
+
+/* 
+  Styles pour la barre de pagination
+*/
+.pagination {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  z-index: 999; /* Assure que la pagination s'affiche au-dessus des autres éléments */
+}
+
+/* 
+  Styles de base pour les boutons de pagination
+*/
+.pagination button {
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: brown;
+  color: white;
+  font-weight: bold;
+}
+
+/* 
+  Changement de couleur lors du survol des flèches
+*/
+.pagination button.arrow:hover {
+  background-color: darkred;
+}
+
+/* 
+  Styles pour les boutons représentant les numéros de page
+*/
+.pagination button.pageNumber {
+  width: 5px;
+  height: 5px;
+}
+
+/* 
+  Style pour le bouton du numéro de page actif
+*/
+.clickedButton {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+/* 
+  Styles pour les boutons des numéros de page adjacents 
+*/
+.pagination button.adjacentButton {
+  width: 20px;
+  height: 20px;
+  background-color: brown;
+  color: white;
+  font-weight: bold;
+}
+
+.pagination button.adjacentButton:hover {
+  background-color: darkred;
+}
+
+/* 
+  Style pour l'image du bouton actif (pokeball)
+*/
+.pokeballImage {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+}

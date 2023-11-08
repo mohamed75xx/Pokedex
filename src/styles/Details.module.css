@@ -1,0 +1,124 @@
+/* Importation de la police pour une esthétique spécifique */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Conteneur principal des détails */
+.details_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 2em;
+  font-family: 'Press Start 2P', cursive;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Conteneur pour l'image */
+.image_container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: image-appear 1s, punch 0.5s infinite alternate;
+}
+
+/* Animations pour l'apparition et le "punch" des images */
+@keyframes image-appear {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes punch {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Réglage de la taille et du positionnement de l'image */
+.image_container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Conteneur des statistiques */
+.stats_container {
+  flex: 1;
+  padding: 1em;
+  background-color: #fff;
+  border-radius: 1em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+}
+
+/* Nom du Pokémon avec une animation de "typage" */
+.name_pokemon {
+  font-size: 2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  color: #333;
+  border-right: .15em solid #333;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 4s steps(40, end) forwards, blink-caret .75s step-end 5, remove-caret 0.1s 4s forwards;
+}
+
+/* Animations pour l'effet de "typage" */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #333; }
+}
+
+@keyframes remove-caret {
+  to { border-color: transparent; }
+}
+
+/* Styles des titres et listes */
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  color: #555;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #eee;
+  margin: 0.2em 0;
+  padding: 0.5em;
+  text-align: center;
+  border-radius: 0.5em;
+}
+
+/* Bouton de retour */
+.button_retour {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 10px 50px;
+  line-height: 1.5;
+  transition: background-color 0.3s ease;
+}
+
+.button_retour:hover {
+  background-color: #555;
+}
+
+/* Responsive Design pour des écrans inférieurs à 768px */
+@media (max-width: 768px) {
+  .details_container {
+    flex-direction: column;
+  }
+
+  .image_container img {
+    max-width: 300px;
+  }
+}
